@@ -1,8 +1,5 @@
 name: Build Jailex APK
-on: 
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
   build:
@@ -16,16 +13,18 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
 
-      - name: Grant Execute Permission
-        run: chmod +x gradlew
+      - name: Force Fix Gradle Engine
+        run: |
+          rm -f gradlew
+          curl -L https://raw.githubusercontent.com/gradle/gradle/master/gradlew -o gradlew
+          chmod +x gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew assembleDebug
+      - name: Build APK
+        run: ./gradlew assembleDebug --stacktrace
 
-      - name: Upload Artifact
+      - name: Upload HUD App
         uses: actions/upload-artifact@v4
         with:
-          name: Jailex-Build-Output
+          name: Jailex-HUD-v1
           path: app/build/outputs/apk/debug/*.apk
