@@ -27,5 +27,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Jailex-2026-Beta
+          name: Jailex-Build-Output
           path: app/build/outputs/apk/debug/*.apk
