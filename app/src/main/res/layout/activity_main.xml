@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:background="#0A0A0A"
+    android:padding="20dp">
 
-    <ScrollView
-        android:id="@+id/home_scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <LinearLayout
-            android:id="@+id/home_linearLayout"
-            android:layout_width="fill_parent"
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="JAILEX STUDIO"
+            android:textColor="#00FFFF"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/hello_world">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System Online | 2026.3"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
 
-            </TextView>
+        <Button
+            android:id="@+id/statusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Check Bot Status"
+            android:backgroundTint="#1A1A1A"
+            android:textColor="#00FFFF" />
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </ScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
